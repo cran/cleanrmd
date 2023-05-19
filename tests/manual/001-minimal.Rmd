@@ -1,14 +1,17 @@
 ---
 title: A minimal R Markdown example
-output: 
+output:
   cleanrmd::html_document_clean:
-    theme: ~
+    # theme: ~
+    theme: latex
     # css: https://fonts.xz.style/serve/inter.css
     # highlight: prism:prism-duotone-space.css
     highlight: rstudio
     dev: png
     mathjax: default
-    self_contained: false
+    self_contained: true
+    toc: true
+toc-title: Contents
 ---
 
 A quote:

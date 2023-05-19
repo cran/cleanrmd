@@ -27,12 +27,12 @@ or in Shiny apps.
 }
 \section{Functions}{
 \itemize{
-\item \code{use_cleanrmd}: Use a clean CSS theme in the current document or app
+\item \code{use_cleanrmd()}: Use a clean CSS theme in the current document or app
 (general usage)
 
-\item \code{cleanrmd_theme_dependency}: Use a clean CSS theme dependency (advanced usage)
-}}
+\item \code{cleanrmd_theme_dependency()}: Use a clean CSS theme dependency (advanced usage)
 
+}}
 \section{R Markdown documents}{
 
 

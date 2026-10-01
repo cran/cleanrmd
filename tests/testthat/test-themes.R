@@ -5,7 +5,11 @@ describe("use_cleanrmd()", {
     x <- use_cleanrmd()
     expect_s3_class(x, "shiny.tag.list")
 
-    is_dep <- vapply(x, function(d) identical(class(d), "html_dependency"), logical(1))
+    is_dep <- vapply(
+      x,
+      function(d) identical(class(d), "html_dependency"),
+      logical(1)
+    )
     expect_true(all(is_dep))
 
     dep_names <- lapply(x[is_dep], function(dep) dep$name)
@@ -21,7 +25,11 @@ describe("use_cleanrmd()", {
     x <- use_cleanrmd("new.css")
     expect_s3_class(x, "shiny.tag.list")
 
-    is_dep <- vapply(x, function(d) identical(class(d), "html_dependency"), logical(1))
+    is_dep <- vapply(
+      x,
+      function(d) identical(class(d), "html_dependency"),
+      logical(1)
+    )
     expect_true(all(is_dep))
 
     dep_names <- lapply(x[is_dep], function(dep) dep$name)
@@ -36,6 +44,32 @@ describe("use_cleanrmd()", {
   it("errors with bad input", {
     expect_error(use_cleanrmd("floofly"))
     expect_error(use_cleanrmd(c("picocss", "minicss")))
+  })
+
+  it("errors with a bad default theme", {
+    expect_error(use_cleanrmd(default = "floofly"))
+    expect_error(use_cleanrmd("new.css", default = "floofly"), NA)
+  })
+})
+
+describe("theme picker JSON", {
+  picker_json <- function(x) {
+    json <- sub('^.*application/json">', "", x$head)
+    json <- sub("</script>.*$", "", json)
+    jsonlite::fromJSON(json)
+  }
+
+  it("embeds the theme list and default theme", {
+    json <- picker_json(cleanrmd_theme_dependency())
+    expect_setequal(names(json), c("default", "themes"))
+    expect_equal(json$default, "new.css")
+    expect_true(all(c("name", "src") %in% names(json$themes)))
+    expect_true("water" %in% json$themes$name)
+  })
+
+  it("honors a custom default theme", {
+    json <- picker_json(cleanrmd_theme_dependency(default = "sakura"))
+    expect_equal(json$default, "sakura")
   })
 })
 

@@ -1,6 +1,6 @@
 Package: cleanrmd
 Title: Clean Class-Less 'R Markdown' HTML Documents
-Version: 0.1.1
+Version: 0.2.0
 Authors@R: c(
     person("Garrick", "Aden-Buie", , "garrick@adenbuie.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-7111-0077")),
@@ -8,12 +8,18 @@ Authors@R: c(
            comment = "Author of awsm.css"),
     person("Alvaro", "Montoro", role = c("ctb", "cph"),
            comment = "Author of almond.css"),
+    person("Vladimir", "Carrer", role = c("ctb", "cph"),
+           comment = "Author of Basic.css"),
+    person("Ty", "Bolt", role = c("ctb", "cph"),
+           comment = "Author of Bolt.css"),
     person("Ruan", "Martinelli", role = c("ctb", "cph"),
            comment = "Author of axist.css"),
     person("Tran Ngoc", "Tuan Anh", role = c("ctb", "cph"),
            comment = "Author of bamboo.css"),
     person("Marco", "Pontili", role = c("ctb", "cph"),
            comment = "Author of bullframe.css"),
+    person("Emanuel", "Regnath", role = c("ctb", "cph"),
+           comment = "Author of classlesscss"),
     person("Evgeny", "Orekhov", role = c("ctb", "cph"),
            comment = "Author of holiday.css"),
     person("Vincent", "Dorig", role = c("ctb", "cph"),
@@ -26,6 +32,10 @@ Authors@R: c(
            comment = "Author of marx"),
     person("Angelos", "Chalaris", role = c("ctb", "cph"),
            comment = "Author of mini.css"),
+    person("Andy", "Brewer", role = c("ctb", "cph"),
+           comment = "Author of MVP.css"),
+    person("Joel", "Dare", role = c("ctb", "cph"),
+           comment = "Author of Neat.css"),
     person("Example", role = c("ctb", "cph"),
            comment = "Author of new.css"),
     person("David", "Paulsson", role = c("ctb", "cph"),
@@ -58,26 +68,32 @@ License: MIT + file LICENSE
 URL: https://pkg.garrickadenbuie.com/cleanrmd/,
         https://github.com/gadenbuie/cleanrmd
 BugReports: https://github.com/gadenbuie/cleanrmd/issues
-Depends: R (>= 2.10)
+Depends: R (>= 3.5)
 Imports: htmltools, jsonlite, rmarkdown, utils
 Suggests: testthat (>= 2.1.0)
+Config/Needs/website: xml2, fs, here, whisker, metathis
+Config/roxygen2/version: 8.1.0
 Encoding: UTF-8
-RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2023-05-19 19:51:41 UTC; garrick
-Author: Garrick Aden-Buie [aut, cre, cph]
-    (<https://orcid.org/0000-0002-7111-0077>),
+Packaged: 2026-09-30 20:51:29 UTC; garrick
+Author: Garrick Aden-Buie [aut, cre, cph] (ORCID:
+    <https://orcid.org/0000-0002-7111-0077>),
   Igor Adamenko [ctb, cph] (Author of awsm.css),
   Alvaro Montoro [ctb, cph] (Author of almond.css),
+  Vladimir Carrer [ctb, cph] (Author of Basic.css),
+  Ty Bolt [ctb, cph] (Author of Bolt.css),
   Ruan Martinelli [ctb, cph] (Author of axist.css),
   Tran Ngoc Tuan Anh [ctb, cph] (Author of bamboo.css),
   Marco Pontili [ctb, cph] (Author of bullframe.css),
+  Emanuel Regnath [ctb, cph] (Author of classlesscss),
   Evgeny Orekhov [ctb, cph] (Author of holiday.css),
   Vincent Dorig [ctb, cph] (Author of latex.css),
   Yegor Bugayenko [ctb, cph] (Author of tacit and kacit),
   John Otander [ctb, cph] (Author of splendor, air, retro, modest),
   Matthew Blode [ctb, cph] (Author of marx),
   Angelos Chalaris [ctb, cph] (Author of mini.css),
+  Andy Brewer [ctb, cph] (Author of MVP.css),
+  Joel Dare [ctb, cph] (Author of Neat.css),
   Example [ctb, cph] (Author of new.css),
   David Paulsson [ctb, cph] (Author of no-class),
   Authors of Pico.css [ctb, cph],
@@ -92,4 +108,4 @@ Author: Garrick Aden-Buie [aut, cre, cph]
   Curtis McEnroe [ctb, cph] (Author of writ)
 Maintainer: Garrick Aden-Buie <garrick@adenbuie.com>
 Repository: CRAN
-Date/Publication: 2023-05-19 20:10:02 UTC
+Date/Publication: 2026-10-01 16:20:07 UTC
